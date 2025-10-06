@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Achal Wasule - Electronics and Telecommunication Engineering student specializing in web development with React.js and Next.js">
+  <title>Achal Wasule | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #fff;
+      --accent-color: cyan;
+    }
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+    body {background:var(--bg-color); color:var(--text-color); line-height:1.6;}
+
+    header {
+      position: fixed; top:0; left:0; width:100%;
+      background: rgba(0,0,0,0.9); display:flex; justify-content:space-between;
+      align-items:center; padding:15px 50px; z-index:1000;
+    }
+
+    .logo {font-size:1.8rem; font-weight:700; color:var(--accent-color); text-decoration:none;}
+    .navbar {display:flex; gap:20px;}
+    .navbar a {color:var(--text-color); text-decoration:none; font-weight:500;}
+    .navbar a:hover {color:var(--accent-color);}
+
+    /* Home Section */
+    .home {height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; flex-direction:column;}
+    .typing-animation {
+      font-size:2.8rem; font-weight:700; overflow:hidden; white-space:nowrap;
+      border-right:3px solid var(--accent-color);
+      animation: typing 4s steps(40,end) infinite, blink-caret 0.75s step-end infinite;
+      width:0;
+    }
+    @keyframes typing {
+      0%{width:0} 50%{width:100%} 55%{width:100%} 100%{width:0}
+    }
+    @keyframes blink-caret {from,to{border-color:transparent} 50%{border-color:var(--accent-color)}}
+    .home h3 {margin-top:10px; font-size:1.5rem; color:var(--accent-color);}
+    .home p {margin:10px 0;}
+    .btn {display:inline-block; padding:10px 20px; margin:10px; border:none; border-radius:5px;
+      background:var(--accent-color); color:#000; font-weight:bold; cursor:pointer; text-decoration:none;}
+    .btn:hover {background:#00bebe;}
+
+    section {padding:80px 20px;}
+    .section-title {text-align:center; font-size:2rem; margin-bottom:40px;}
+    .section-title span {color:var(--accent-color);}
+
+    /* Skills */
+    .skills-container {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:1.5rem; max-width:1200px; margin:auto;
+    }
+    .skill-item {
+      background:rgba(255,255,255,0.05); border-radius:10px; padding:20px;
+      text-align:center; transition:0.3s; position:relative;
+    }
+    .skill-item:hover {transform:translateY(-10px) scale(1.05); box-shadow:0 10px 25px rgba(0,255,255,0.3);}
+    .skill-icon {width:60px; height:60px; margin-bottom:10px;}
+    .skill-level {font-size:0.8rem; color:var(--accent-color);}
+
+    
+
+    /* Education Section (Cards) */
+   .education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: auto;
+  
+   }
+
+    .education-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 6px solid #5eebfb; 
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+    .education-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,255,255,0.3);
+    }
+    .education-card h3 {
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+    .education-card h4 {
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .education-date {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    
+
+    /* Projects */
+    .projectstotal {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; max-width:1200px; margin:auto;}
+    .project-card {
+      background:rgba(255,255,255,0.05); border-radius:10px; overflow:hidden;
+      transition:0.3s;
+    }
+    .project-card:hover {transform:scale(1.03);}
+    .project-img img {width:100%; height:200px; object-fit:cover;}
+    .project-content {padding:15px;}
+    .project-links a {color:var(--accent-color); margin-right:10px; text-decoration:none;}
+.project-card {
+  background: rgb(53, 51, 51);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.btn {
+  background:grey;
+  color: rgb(2, 2, 2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #45a049;
+}
+
+.github-icon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+  position: corner;
+}
+
+.github-icon:hover {
+  color: #000;
+}
+
+    /* Contact */
+    .contact-container {display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1000px; margin:auto;}
+    .contact-item {margin-bottom:20px;}
+    .contact-item i {font-size:2rem; color:var(--accent-color);}
+    .contact-form input, .contact-form textarea {
+      width:100%; padding:10px; margin:10px 0; border:none; border-radius:5px;
+    }
+    .btn1 {padding:10px 20px; background:var(--accent-color); border:none; cursor:pointer; border-radius:5px;}
+
+    /* Footer */
+    footer {background:#111; text-align:center; padding:20px;}
+    .social a {color:var(--accent-color); font-size:1.5rem; margin:0 10px;}
+
+    /* Back To Top */
+    #backToTop {
+      position:fixed; bottom:20px; right:20px;
+      background:var(--accent-color); border:none; padding:10px;
+      border-radius:50%; cursor:pointer; display:none;
+    }
+    #backToTop i {font-size:1.5rem; color:#000;}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">Achal</a>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="home">
+    <h1><span class="typing-animation">Hi, I'm Achal Wasule</span></h1>
+    <h3>Electronics Engineer & Web Developer</h3>
+    <p>Creating responsive and interactive web experiences</p>
+    <a href="resume.pdf" download class="btn">Download Resume</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <img src="photo.jpg" class="im" alt="Achal Wasule - Web Developer"
+    style="width:300px; height:300px; border-radius:50%; display:block; margin:auto; box-shadow: 0 0 15px rgba(0,255,255,0.3);">
+<section id="about">
+  <div class="aboutme-card">
+    <p style="max-width:800px; margin:auto; text-align:center;">
+      Hello, I'm Achal Baliram Wasule.<br>
+      Final-year engineering student at JSPM'S Rajarshi Shahu College Of Engineering, Pune.<br>
+      Passionate about React.js, Next.js, Spring, and Networking.
+    </p>
+  </div>
+  </section>
+
+  <!-- Education (Now as Cards) -->
+  <section id="education">
+    <h2 class="section-title">My <span>Education</span></h2>
+    <div class="education-container">
+      <div class="education-card">
+        <h3>B.Tech in Electronics and Telecommunication</h3>
+        <h4>JSPM'S Rajarshi Shahu College Of Engineering, Pune</h4>
+        <p class="education-date">2022 - 2026</p>
+        <p>Currently pursuing my bachelor's degree with a focus on Cloud computing and Networking.</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Higher Secondary Education</h3>
+        <h4>The New Era High School</h4>
+        <p class="education-date">2020 - 2022</p>
+        <p>Completed with distinction in Physics, Chemistry, and Mathematics.</p>
+      </div>
+
+      <div class="education-card">
+        <h3>Secondary School Certificate</h3>
+        <h4>Matoshree Nathiyabai Vidyalay Sungaon</h4>
+        <p class="education-date">2020</p>
+        <p>Completed with excellence in Science and Mathematics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="skills-container">
+      <div class="skill-item"><img src="html.png" class="skill-icon"><p>HTML</p><span class="skill-level">Advanced</span></div>
+      <div class="skill-item"><img src="css.png" class="skill-icon"><p>CSS</p><span class="skill-level">Advanced</span></div>
+      <div class="skill-item"><img src="js.png" class="skill-icon"><p>JavaScript</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="react.png" class="skill-icon"><p>React</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="mysql.png" class="skill-icon"><p>MySQL</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="linux.png" class="skill-icon"><p>Linux</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="REST.png" class="skill-icon"><p>REST</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="api.png" class="skill-icon"><p>Restful API</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="java.png" class="skill-icon"><p>Java</p><span class="skill-level">Intermediate</span></div>
+      <div class="skill-item"><img src="http.png" class="skill-icon"><p>HTTP</p><span class="skill-level">Intermediate</span></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <div class="projectstotal">
+      <div class="project-card">
+        <div class="project-img"><img src="ana.png" alt="Smart Lift"></div>
+        <div class="project-content">
+          <h3>Smart Lift System</h3>
+          <p>AI-powered prototype with child safety. Detects and classifies users via camera using deep learning to control lift door access.</p>
+        <div class="project-links">
+    <a href="project-details.html" class="btn">View Details</a>
+    <a href="https://github.com/your-username/smart-lift" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="test.png" alt="TasteHub"></div>
+        <div class="project-content">
+          <h3>TasteHub Restaurant</h3>
+          <p>A modern restaurant combining multi-cuisine dining with digital ordering via app/QR code.</p>
+        <div class="project-links">
+    <a href="project-details.html" class="btn">View Details</a>
+    <a href="https://github.com/your-username/smart-lift" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="sport.png" alt="Spotify Clone"></div>
+        <div class="project-content">
+          <h3>Spotify Clone</h3>
+          <p>Music streaming app with player controls, playlists, and API integration to replicate Spotify features.</p>
+        <div class="project-links">
+    <a href="project-details.html" class="btn">View Details</a>
+    <a href="https://github.com/your-username/smart-lift" target="_blank" class="github-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Contact <span>Me</span></h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item"><i class="bx bx-map"></i><p>Pune, Maharashtra, India</p></div>
+        <div class="contact-item"><i class="bx bx-envelope"></i><p>achalwasule19@gmail.com</p></div>
+        <div class="contact-item"><i class="bx bx-phone"></i><p>+91 9699319241</p></div>
+      </div>
+      <div class="contact-form">
+       <form id="contact-form">
+  <input type="text" placeholder="Full Name" name="user_name" required>
+  <input type="email" placeholder="Email" name="user_email" required>
+  <textarea placeholder="Your Message" name="message" required></textarea>
+  <button type="submit" class="btn1">Send</button>
+</form>
+
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="social">
+      <a href="#"><i class="bx bxl-github"></i></a>
+      <a href="#"><i class="bx bxl-linkedin"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+    </div>
+    <p>© 2025 Achal | All Rights Reserved</p>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop"><i class="bx bx-up-arrow-alt"></i></button>
+
+  <!-- JS -->
+  <script>
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+    backToTop.onclick = () => {window.scrollTo({top:0, behavior:"smooth"});}
+  </script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script type="text/javascript">
+  (function(){
+    emailjs.init("OcoJToyNYZHkoCsbW"); // Replace with your EmailJS User ID, not email
+  })();
+    </script>
+
+<script type="text/javascript">
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent page refresh
+
+    emailjs.sendForm('service_0my05le', 'template_4d17o8e', this)
+      .then(function() {
+        alert('Message sent successfully!');
+        form.reset();
+      }, function(error) {
+        alert('Oops! Something went wrong...\n' + (error && error.text ? error.text : JSON.stringify(error)));
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+
+
+</body>
+</html>
