@@ -13,6 +13,27 @@
 
   <!-- Internal CSS -->
   <style>
+.fancy-typing {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00ffff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #00ffff; /* blinking cursor */
+  width: 0;
+  animation: typing 6s steps(18,end) forwards, blink 0.99s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; } /* 18 characters in "Hi, I'm Achal Wasule" */
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #00ffff; }
+}
+
     :root {
       --bg-color: #0d0d0d;
       --text-color: #fff;
@@ -185,6 +206,7 @@
   </style>
 </head>
 <body>
+    
   <!-- Header -->
   <header>
     <a href="#" class="logo">Achal</a>
@@ -200,7 +222,7 @@
 
   <!-- Home -->
   <section id="home" class="home">
-    <h1><span class="typing-animation">Hi, I'm Achal Wasule</span></h1>
+    <h1 class="fancy-typing">Hi, I'm Achal Wasule</h1>
     <h3>Electronics Engineer & Web Developer</h3>
     <p>Creating responsive and interactive web experiences</p>
     <a href="resume.pdf" download class="btn">Download Resume</a>
